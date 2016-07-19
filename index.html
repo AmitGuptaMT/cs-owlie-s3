@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Upload utility</title>
+ <base href="/">
+ <link rel='stylesheet' href='node_modules/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
+ <link href="vendor/css/angular-growl.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+ <link rel="stylesheet" type="text/css" href="node_modules/ng-tags-input/build/ng-tags-input.min.css">
+ <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body ng-app="uploadApp">
+<div growl></div>
+ <div ng-controller="navigationController" ng-if="showHeader">
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top top-nav" role="navigation">
+   <ul class="nav navbar-nav">
+    <li><a href="#" ui-sref="images">View all images</a></li>
+    <li><a href="#" ui-sref="upload">Upload images</a></li>
+    <li><a href="#" ng-click="logout()" class="btn btn-link">Logout</a></li>
+   </ul>
+  </nav>
+ </div>
+
+    <div class="container body-container">
+        <div ui-view=""></div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="footer-block clearfix">
+            <div class="pull-left" ng-cloak>&copy;&nbsp;{{currentYear}} v0.1</div>
+            <div class="pull-right">Designed, developed and maintained with &#x2764; by Consumer Solutions(Noida)</div>
+        </div>  
+        </div>
+    </div>
+
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="js/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script> 
+<script type='text/javascript' src='node_modules/angular-loading-bar/build/loading-bar.min.js'></script>
+<script type="text/javascript" src="node_modules/ng-flow/dist/ng-flow-standalone.min.js"></script>
+<script type="text/javascript" src="node_modules/ng-tags-input/build/ng-tags-input.js"></script>
+<script src="vendor/js/angular-growl.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/api-factory.js"></script>
+<script type="text/javascript" src="js/confirm-dialog/confirmation-controller.js"></script>
+<script type="text/javascript" src="js/confirm-dialog/confirmation-dialog-service.js"></script>
+<script type="text/javascript" src="js/confirm-dialog/confirmation-service.js"></script>
+<script type="text/javascript" src="js/controller/login-controller.js"></script>
+<script type="text/javascript" src="js/controller/image-listing-controller.js"></script>
+<script type="text/javascript" src="js/controller/navigation-controller.js"></script>
+<script type="text/javascript" src="js/controller/image-uploading-controller.js"></script>
+<script type="text/javascript" src="js/controller/full-image-view-modal-controller.js"></script>
+<script type="text/javascript" src="js/controller/add-tags-controller.js"></script>
+</body>
+</html>

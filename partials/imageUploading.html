@@ -1,0 +1,47 @@
+<h1>Upload an image</h1>
+
+<div flow-init="uploadOptions"  
+    flow-file-success="assetUploadSuccess( $file, $message, $flow )"
+     
+    flow-files-submitted="$flow.upload()"
+    
+    flow-file-error="assetUploadError( $file, $message, $flow )"
+    flow-complete="assetUploadingComplete()">
+    <div class="uploading-controls">
+    	<button flow-btn>Upload</button>
+
+        <table class="table table-hover table-bordered table-striped" flow-transfers>
+            <thead ng-if="transfers.length">
+                <tr>
+                    <th>#</th>
+                    <th>Name
+<!--                         <span class="pull-right">
+                          <a ng-show="!$flow.isUploading()"  ng-click="$flow.cancel()">Clear all</a>
+                          <a ng-show="$flow.isUploading()"  ng-click="$flow.cancel()">Cancel all</a>
+                      </span> -->
+                    </th>
+                </tr>
+            </thead>
+            <tbody ng-if="transfers.length">
+                <tr ng-repeat="file in transfers">
+                    <td>{{$index+1}}</td>
+                    <td>
+<!--                         <a ng-if="file.error" class="btn btn-primary btn-xs file-btn" ng-click="file.retry()">Retry</a>
+                        <a ng-if="file.error" class="btn btn-xs btn-default file-btn" ng-click="file.cancel()"> Clear</a>
+                        <span ng-if="file.error" class="text-danger" tooltip="{{file.errorMessage}}">Upload Failed</span> -->
+
+                        <div ng-if="!file.finished && !file.error " class="progress progress-striped asset-progress" ng-class="{active: file.isUploading()}">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{file.progress() * 100}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width: (file.progress() * 100) + '%'}">
+                                <span class="sr-only">{{file.progress()}}% Complete </span>
+                            </div>
+                        </div>
+                        <!-- <a class="btn btn-xs btn-default file-btn" ng-click="file.cancel()" ng-show="file.isUploading()"> Cancel</a> {{file.name}}
+                        <a class="btn btn-xs btn-default file-btn" ng-click="cancelAsssetUploading(file)" ng-show="file.isUploading()"> Cancel</a> {{file.name}} -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    	
+    </div>
+</div> 

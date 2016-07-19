@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-12 clearfix">
+		<h3 class="text-muted pull-left">Images 
+		<span ng-bind="imageList.length | singularOrMultiple:'Image'" class="pic-count"></span></h3>
+	</div> 
+	
+</div>
+<div class="demo-card" ng-repeat="image in imageList">
+	<div class="card">
+		<img class="card-img-top" ng-src="{{image.url}}" ng-click="openFullView($index)">
+    </div>
+    <div class="card-footer clearfix">
+        <span class="pic-name" ng-bind="image.filename"></span>
+        <div class="icons">
+        	<i class="glyphicon glyphicon-pencil icon-pointer" ng-click="editImage($index)"></i>
+        	<i class="glyphicon glyphicon-trash icon-pointer" ng-click="deleteImage(image, $index)"></i>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,13 @@
+    <div class="modal-dialog">
+        <div class="modal-header" ng-class="{'warning' : modal_details.yes_button_text === 'Delete'}">
+            <button type="button" class="close" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <h4 class="modal-title modal-heading"><span ng-bind="modal_details.modal_title"></span></h4>
+        </div>
+        <div class="modal-body">
+            <p><span ng-bind="modal_details.modal_body"></span></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="cancel()"><span ng-bind="modal_details.no_button_text"></span></button>
+            <button type="button" class="btn btn-primary" ng-class="{'btn-warning' : modal_details.yes_button_text === 'Delete', 'btn-primary' : modal_details.yes_button_text !== 'Delete'}"  ng-click="ok()"><span ng-bind="modal_details.yes_button_text"></span></button>
+        </div>
+    </div>
